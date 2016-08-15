@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sample.foo.databindingsample.SecondActivity">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.sample.foo.databindingsample.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/firstnameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/firstname" />
+
+        <TextView
+            android:id="@+id/firstnameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/firstnameLabel"
+            android:layout_toRightOf="@id/firstnameLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@{user.firstname}" />
+
+        <TextView
+            android:id="@+id/lastnameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstnameLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/lastname" />
+
+        <TextView
+            android:id="@+id/lastnameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/lastnameLabel"
+            android:layout_toRightOf="@id/lastnameLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@{user.lastname}" />
+
+        <TextView
+            android:id="@+id/ageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lastnameLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/age" />
+
+        <TextView
+            android:id="@+id/ageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/ageLabel"
+            android:layout_toRightOf="@id/ageLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@{String.valueOf(user.age)}" />
+
+        <TextView
+            android:id="@+id/genderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ageLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/gender" />
+
+        <TextView
+            android:id="@+id/genderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/genderLabel"
+            android:layout_toRightOf="@id/genderLabel"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@{user.gender}" />
+
+        <Button
+            android:id="@+id/nextActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/next_activity" />
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/nextActivityButton"
+            android:layout_centerInParent="true"
+            android:text="@string/update" />
+
+        <EditText
+            android:id="@+id/lastnameEditText"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/updateButton"
+            android:layout_centerInParent="true"
+            android:hint="@string/update_lastname" />
+
+        <EditText
+            android:id="@+id/firstnameEditText"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/lastnameEditText"
+            android:layout_centerInParent="true"
+            android:hint="@string/update_firstname" />
+
+    </RelativeLayout>
+</layout>
